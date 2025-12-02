@@ -1,3 +1,6 @@
+import time
+start = time.time()
+
 with open("day2\input.txt", 'r') as i:
     inp = i.read().split(",")
 
@@ -46,3 +49,5 @@ for r in ids:
 # print(is_fully_repeated(new, len(new)))
 
 print(false_ids)
+end = time.time()
+print(f"Took {start-end} seconds")
