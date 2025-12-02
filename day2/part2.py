@@ -25,7 +25,6 @@ def is_fully_repeated(string, length):
             return False
         
         mult = length / len(previous)
-        print(f"Mult: {mult}")
         if mult % 1 != 0:
             continue
         mult = int(mult)
