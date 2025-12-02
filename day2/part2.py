@@ -18,23 +18,16 @@ def is_fully_repeated(string, length):
     previous = ""
     for character in list(string):
         previous += character
-        print("")
-        print(f"Character: {character}")
-        print(f"Previous: {previous}")
         if previous * len(string) == string:
             return True
 
-        print(f"Length: {len(previous)}")
-        print(f"Condition: length // 2 = {length // 2}")
         if len(previous) > length // 2:
-            print(f"FALSE: length is greater than the condition")
             return False
         
         mult = length / len(previous)
         print(f"Mult: {mult}")
         if mult % 1 != 0:
-            print("FALSE: The mult is not a int")
-            return False # if a string cannot fully fit, it is not invalid
+            continue
         mult = int(mult)
         if previous * mult == string:
             return True
@@ -42,15 +35,15 @@ def is_fully_repeated(string, length):
     return False
 
 
-# for r in ids:
-#     for id in range(r[0],r[1]+1):
-#         length = len(str(id))
-#         if is_fully_repeated(str(id), length):
-#             print(f"id {id}")
-#             false_ids += id
-#     print("done block")
+for r in ids:
+    for id in range(r[0],r[1]+1):
+        length = len(str(id))
+        if is_fully_repeated(str(id), length):
+            print(f"id {id}")
+            false_ids += id
+    print("done block")
 
-new = input("What is the ID you want to test? ")
-print(is_fully_repeated(new, len(new)))
+# new = input("What is the ID you want to test? ")
+# print(is_fully_repeated(new, len(new)))
 
-# print(false_ids)
+print(false_ids)
