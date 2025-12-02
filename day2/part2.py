@@ -15,6 +15,8 @@ print(ids)
 false_ids = 0
 
 def is_fully_repeated(string, length):
+    if length == 1:
+        return False
     previous = ""
     for character in list(string):
         previous += character
@@ -26,7 +28,7 @@ def is_fully_repeated(string, length):
         
         mult = length / len(previous)
         if mult % 1 != 0:
-            continue
+            continue # if a string cannot fully fit, it is not invalid
         mult = int(mult)
         if previous * mult == string:
             return True
@@ -42,7 +44,5 @@ for r in ids:
             false_ids += id
     print("done block")
 
-# new = input("What is the ID you want to test? ")
-# print(is_fully_repeated(new, len(new)))
 
 print(false_ids)
