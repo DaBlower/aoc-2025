@@ -18,7 +18,7 @@ jobs:
         run: |
           DAY=$(date +"%-d")
           echo "DAY=$DAY" >> $GITHUB_OUTPUT
-          echo "DAY_DIR=day$DAY"
+          echo "DAY_DIR=day$DAY" >> $GITHUB_OUTPUT
       - name: Create day folder and files
         run: |
           DAY="${{  steps.set_day.outputs.DAY  }}"
