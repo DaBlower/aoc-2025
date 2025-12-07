@@ -20,7 +20,6 @@ jobs:
         id: set_day
         run: |
           DAY=$(date +"%-d")
-          DAY=$((DAY + 1))
           echo "DAY=$DAY" >> $GITHUB_OUTPUT
           echo "DAY_DIR=day$DAY" >> $GITHUB_OUTPUT
       - name: Create day folder and files
