@@ -34,16 +34,18 @@ jobs:
       - name: Commit and push
         run: |
           DAY="${{  steps.set_day.outputs.DAY  }}"
-          
-          if git diff --quiet; then
-            echo "No changes to commit :("
-            exit 1
-          fi
+        
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add .
+
+          if git diff --quiet; then
+            echo "No changes to commit :("
+            exit 1
+          fi
+          
           git commit -m "Create AoC day ${DAY} files"
           git push
         env:
