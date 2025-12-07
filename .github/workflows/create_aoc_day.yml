@@ -41,11 +41,11 @@ jobs:
 
           git add .
 
-          if git diff --quiet; then
+          if git diff --cached --quiet; then
             echo "No changes to commit :("
             exit 1
           fi
-          
+
           git commit -m "Create AoC day ${DAY} files"
           git push
         env:
