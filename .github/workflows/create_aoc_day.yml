@@ -32,7 +32,7 @@ jobs:
 
           echo "inp = open(\"${DAY_DIR}/input.txt\").read().splitlines()" > "${DAY_DIR}/part1.py"
           echo "inp = open(\"${DAY_DIR}/input.txt\").read().splitlines()" > "${DAY_DIR}/part2.py"
-          touch "${DAY_DIR}/input.txt
+          touch ${DAY_DIR}/input.txt
 
       - name: Commit and push
         run: |
